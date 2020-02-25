@@ -1,7 +1,7 @@
 import React from "react";
 
 function SongList() {
-  return <div>song list</div>;
+  return <div>SongList</div>;
 }
 
 export default SongList;

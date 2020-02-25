@@ -1,7 +1,7 @@
 import React from "react";
 
 function QueuedSongList() {
-  return <div>queued song list</div>;
+  return <div>QueuedSongList</div>;
 }
 
 export default QueuedSongList;

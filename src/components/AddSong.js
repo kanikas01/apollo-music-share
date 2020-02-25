@@ -1,7 +1,7 @@
 import React from "react";
 
 function AddSong() {
-  return <div>add song</div>;
+  return <div>AddSong</div>;
 }
 
 export default AddSong;
