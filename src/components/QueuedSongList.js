@@ -1,8 +1,16 @@
 import React from "react";
-import { Typography, Avatar, IconButton, makeStyles } from "@material-ui/core";
+import {
+  Typography,
+  Avatar,
+  IconButton,
+  makeStyles,
+  useMediaQuery
+} from "@material-ui/core";
 import { Delete } from "@material-ui/icons";
 
 function QueuedSongList() {
+  const greaterThanMd = useMediaQuery(theme => theme.breakpoints.up("md"));
+
   const song = {
     title: "Love Burns",
     artist: "Black Rebel Motorcycle Club",
@@ -11,14 +19,16 @@ function QueuedSongList() {
   };
 
   return (
-    <div style={{ margin: "10px 0" }}>
-      <Typography color="textSecondary" variant="button">
-        Queue (5)
-      </Typography>
-      {Array.from({ length: 5 }, () => song).map((song, i) => (
-        <QueuedSong key={i} song={song} />
-      ))}
-    </div>
+    greaterThanMd && (
+      <div style={{ margin: "10px 0" }}>
+        <Typography color="textSecondary" variant="button">
+          Queue (5)
+        </Typography>
+        {Array.from({ length: 5 }, () => song).map((song, i) => (
+          <QueuedSong key={i} song={song} />
+        ))}
+      </div>
+    )
   );
 }
 
