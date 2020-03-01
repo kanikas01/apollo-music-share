@@ -34,7 +34,7 @@ const useStyles = makeStyles(theme => ({
 }));
 
 function AddSong() {
-  const [url, setUrl] = React.useState();
+  const [url, setUrl] = React.useState("");
   const [playable, setPlayable] = React.useState(false);
   const classes = useStyles();
   const [dialog, setDialog] = React.useState(false);
@@ -152,8 +152,8 @@ function AddSong() {
       </Dialog>
       <TextField
         className={classes.urlInput}
-        onChange={event => setUrl(event.target.value)}
         value={url}
+        onChange={event => setUrl(event.target.value)}
         placeholder="Add YouTube or Soundcloud URL"
         fullWidth
         margin="normal"
