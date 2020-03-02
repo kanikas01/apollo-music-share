@@ -4,13 +4,28 @@ import AddSong from "./components/AddSong";
 import SongList from "./components/SongList";
 import SongPlayer from "./components/SongPlayer";
 import { Grid, useMediaQuery, Hidden } from "@material-ui/core";
+import songReducer from "./reducer";
+
+export const SongContext = React.createContext({
+  song: {
+    id: "f21bcf5d-4a45-4d10-affb-24eee1682c30",
+    title: "Carried From The Start",
+    artist: "Black Rebel Motorcycle Club",
+    thumbnail: "http://img.youtube.com/vi/yrcejc-xnBA/0.jpg",
+    url: "https://www.youtube.com/watch?v=yrcejc-xnBA",
+    duration: 367
+  },
+  isPlaying: false
+});
 
 function App() {
+  const initialSongState = React.useContext(SongContext);
+  const [state, dispatch] = React.useReducer(songReducer, initialSongState);
   const greaterThanMd = useMediaQuery(theme => theme.breakpoints.up("md"));
   const greaterThanSm = useMediaQuery(theme => theme.breakpoints.up("sm"));
 
   return (
-    <>
+    <SongContext.Provider value={{ state, dispatch }}>
       <Hidden only="xs">
         <Header />
       </Hidden>
@@ -49,7 +64,7 @@ function App() {
           <SongPlayer />
         </Grid>
       </Grid>
-    </>
+    </SongContext.Provider>
   );
 }
 
