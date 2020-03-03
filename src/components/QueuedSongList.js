@@ -23,9 +23,9 @@ function QueuedSongList({ queue }) {
     greaterThanMd && (
       <div style={{ margin: "10px 0" }}>
         <Typography color="textSecondary" variant="button">
-          Queue (5)
+          QUEUE ({queue.length})
         </Typography>
-        {Array.from({ length: 5 }, () => song).map((song, i) => (
+        {queue.map((song, i) => (
           <QueuedSong key={i} song={song} />
         ))}
       </div>
