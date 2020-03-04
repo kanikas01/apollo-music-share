@@ -14,7 +14,7 @@ import { SongContext } from "../App";
 import { useQuery } from "@apollo/react-hooks";
 import { GET_QUEUED_SONGS } from "../graphql/queries";
 import ReactPlayer from "react-player";
-import { subscribe } from "graphql";
+// import { subscribe } from "graphql";
 
 const useStyles = makeStyles(theme => ({
   container: {
@@ -51,7 +51,21 @@ function SongPlayer() {
   const [played, setPlayed] = React.useState(0);
   const [playedSeconds, setPlayedSeconds] = React.useState(0);
   const [seeking, setSeeking] = React.useState(false);
+  const [positionInQueue, setPositionInQueue] = React.useState(0);
   const classes = useStyles();
+
+  React.useEffect(() => {
+    const songIndex = data.queue.findIndex(song => song.id === state.song.id);
+    setPositionInQueue(songIndex);
+  }, [data.queue, state.song.id]);
+
+  React.useEffect(() => {
+    const nextSong = data.queue[positionInQueue + 1];
+    if (played >= 0.99 && nextSong) {
+      setPlayed(0);
+      dispatch({ type: "SET_SONG", payload: { song: nextSong } });
+    }
+  }, [data.queue, played, dispatch, positionInQueue]);
 
   function handleTogglePlay() {
     dispatch(state.isPlaying ? { type: "PAUSE_SONG" } : { type: "PLAY_SONG" });
@@ -66,12 +80,26 @@ function SongPlayer() {
   }
 
   function handleSeekMouseUp() {
-    setSeeking(true);
+    setSeeking(false);
     reactPlayerRef.current.seekTo(played);
   }
 
   function formatDuration(seconds) {
     return new Date(seconds * 1000).toISOString().substr(11, 8);
+  }
+
+  function handlePlayPrevSong() {
+    const prevSong = data.queue[positionInQueue - 1];
+    if (prevSong) {
+      dispatch({ type: "SET_SONG", payload: { song: prevSong } });
+    }
+  }
+
+  function handlePlayNextSong() {
+    const nextSong = data.queue[positionInQueue + 1];
+    if (nextSong) {
+      dispatch({ type: "SET_SONG", payload: { song: nextSong } });
+    }
   }
 
   return (
@@ -87,7 +115,7 @@ function SongPlayer() {
             </Typography>
           </CardContent>
           <div className={classes.controls}>
-            <IconButton>
+            <IconButton onClick={handlePlayPrevSong}>
               <SkipPrevious />
             </IconButton>
             <IconButton onClick={handleTogglePlay}>
@@ -97,7 +125,7 @@ function SongPlayer() {
                 <PlayArrow className={classes.playIcon} />
               )}
             </IconButton>
-            <IconButton>
+            <IconButton onClick={handlePlayNextSong}>
               <SkipNext />
             </IconButton>
             <Typography variant="subtitle1" component="p" color="textSecondary">
