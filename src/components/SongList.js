@@ -18,13 +18,6 @@ import { ADD_OR_REMOVE_FROM_QUEUE } from "../graphql/mutations";
 function SongList() {
   const { data, loading, error } = useSubscription(GET_SONGS);
 
-  // const song = {
-  //   title: "Love Burns",
-  //   artist: "Black Rebel Motorcycle Club",
-  //   thumbnail:
-  //     "https://i2.wp.com/thebaybridged.com/wp-content/uploads/2018/02/brmc.jpg"
-  // };
-
   if (loading) {
     return (
       <div

@@ -14,7 +14,6 @@ import { SongContext } from "../App";
 import { useQuery } from "@apollo/react-hooks";
 import { GET_QUEUED_SONGS } from "../graphql/queries";
 import ReactPlayer from "react-player";
-// import { subscribe } from "graphql";
 
 const useStyles = makeStyles(theme => ({
   container: {

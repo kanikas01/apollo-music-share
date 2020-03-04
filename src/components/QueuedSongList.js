@@ -11,15 +11,7 @@ import { useMutation } from "@apollo/react-hooks";
 import { ADD_OR_REMOVE_FROM_QUEUE } from "../graphql/mutations";
 
 function QueuedSongList({ queue }) {
-  console.log({ queue });
   const greaterThanMd = useMediaQuery(theme => theme.breakpoints.up("md"));
-
-  // const song = {
-  //   title: "Love Burns",
-  //   artist: "Black Rebel Motorcycle Club",
-  //   thumbnail:
-  //     "https://i2.wp.com/thebaybridged.com/wp-content/uploads/2018/02/brmc.jpg"
-  // };
 
   return (
     greaterThanMd && (
