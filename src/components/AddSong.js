@@ -152,7 +152,7 @@ function AddSong() {
             name="title"
             label="Title"
             fullWidth
-            error={handleError("title")}
+            error={handleError("title") || !title}
             helperText={handleError("title") && "Fill out field"}
           />
           <TextField
@@ -162,7 +162,7 @@ function AddSong() {
             name="artist"
             label="Artist"
             fullWidth
-            error={handleError("artist")}
+            error={handleError("artist") || !artist}
             helperText={handleError("artist") && "Fill out field"}
           />
           <TextField
@@ -172,7 +172,7 @@ function AddSong() {
             name="thumbnail"
             label="Thumbnail"
             fullWidth
-            error={handleError("thumbnail")}
+            error={handleError("thumbnail") || !thumbnail}
             helperText={handleError("thumbnail") && "Fill out field"}
           />
         </DialogContent>
