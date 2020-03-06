@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.js": "/apollo-music-share/static/js/main.3d484cdd.chunk.js",
+    "main.js.map": "/apollo-music-share/static/js/main.3d484cdd.chunk.js.map",
+    "runtime-main.js": "/apollo-music-share/static/js/runtime-main.445d45a3.js",
+    "runtime-main.js.map": "/apollo-music-share/static/js/runtime-main.445d45a3.js.map",
+    "static/js/2.69974dd9.chunk.js": "/apollo-music-share/static/js/2.69974dd9.chunk.js",
+    "static/js/2.69974dd9.chunk.js.map": "/apollo-music-share/static/js/2.69974dd9.chunk.js.map",
+    "index.html": "/apollo-music-share/index.html",
+    "precache-manifest.da4226cd27ba98a3ae685d18e9f50176.js": "/apollo-music-share/precache-manifest.da4226cd27ba98a3ae685d18e9f50176.js",
+    "service-worker.js": "/apollo-music-share/service-worker.js",
+    "static/js/2.69974dd9.chunk.js.LICENSE.txt": "/apollo-music-share/static/js/2.69974dd9.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.445d45a3.js",
+    "static/js/2.69974dd9.chunk.js",
+    "static/js/main.3d484cdd.chunk.js"
+  ]
+}
