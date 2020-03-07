@@ -8,11 +8,11 @@ import songReducer from "./reducer";
 
 export const SongContext = React.createContext({
   song: {
-    id: "f21bcf5d-4a45-4d10-affb-24eee1682c30",
-    title: "Carried From The Start",
-    artist: "Black Rebel Motorcycle Club",
-    thumbnail: "http://img.youtube.com/vi/yrcejc-xnBA/0.jpg",
-    url: "https://www.youtube.com/watch?v=yrcejc-xnBA",
+    id: "43fa6496-3dad-445a-9ca5-4bdfe308674c",
+    title: "No Longer Making Time",
+    artist: "Slowdive",
+    thumbnail: "http://img.youtube.com/vi/tuui8QFhIeM/0.jpg",
+    url: "https://www.youtube.com/watch?v=tuui8QFhIeM",
     duration: 367
   },
   isPlaying: false
