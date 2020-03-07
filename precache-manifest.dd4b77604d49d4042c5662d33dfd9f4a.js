@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "9f1f2342c346c7e5ce00ea6ac05e4f06",
+    "revision": "dbb0f93545743bbac8ff7620f009dadf",
     "url": "/apollo-music-share/index.html"
   },
   {
@@ -12,8 +12,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/apollo-music-share/static/js/2.7a3456a0.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "f21fec4d9f848bc0c9d6",
-    "url": "/apollo-music-share/static/js/main.d21731e3.chunk.js"
+    "revision": "5e057438596dacfcd5ad",
+    "url": "/apollo-music-share/static/js/main.13aa853d.chunk.js"
   },
   {
     "revision": "c72174eb15be8ec4183f",
