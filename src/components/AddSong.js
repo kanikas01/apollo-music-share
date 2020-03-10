@@ -43,12 +43,12 @@ const DEFAULT_SONG = {
 };
 
 function AddSong() {
+  const [dialog, setDialog] = React.useState(false);
+  const [playable, setPlayable] = React.useState(false);
+  const [song, setSong] = React.useState(DEFAULT_SONG);
   const [url, setUrl] = React.useState("");
   const [addSong, { error }] = useMutation(ADD_SONG);
-  const [playable, setPlayable] = React.useState(false);
   const classes = useStyles();
-  const [dialog, setDialog] = React.useState(false);
-  const [song, setSong] = React.useState(DEFAULT_SONG);
 
   React.useEffect(() => {
     const isPlayable =
